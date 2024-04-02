@@ -2,7 +2,7 @@
 
 le projet de gestion d'un hotel pour le s4.
 
-## les contibuteurs 
+## les contributeurs 
 - Abdelkarim Guenane
 - Mohamed Said Naïl Chelali
 - Safwane Souhil Dendani 
