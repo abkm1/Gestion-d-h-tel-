@@ -4,9 +4,11 @@ import View.*;
 public class Main {
     public static void main (String[] args)
     {
-//        IDsAndPasswords idsandPasswords = new IDsAndPasswords();
-//       LoginView login = new LoginView(idsandPasswords.getLoginInfo());
-         PageAccueilAdminView Accueil = new PageAccueilAdminView();
+        IDsAndPasswords idsandPasswords = new IDsAndPasswords();
+     LoginView login = new LoginView(idsandPasswords.getLoginInfo());
+
+
+
 
 
     }

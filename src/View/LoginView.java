@@ -1,6 +1,7 @@
 package View ;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 public class LoginView implements ActionListener {
 
     JFrame frame = new JFrame();
+    Border border = BorderFactory.createLineBorder(new Color(0xf),1);
     JButton loginButton = new JButton("Se connecter");
     JButton resetButton = new JButton("Réinitialiser");
 
@@ -20,7 +22,6 @@ public class LoginView implements ActionListener {
     JLabel username = new JLabel ("Nom d'utilisateur :");
     JLabel userPassword = new JLabel ("Mot de passe :");
 
-    JLabel Return = new JLabel();
 
     HashMap<String,String> LoginInfo = new HashMap <String,String>();
     public LoginView(HashMap<String, String> LoginInfoOriginal) {
@@ -33,14 +34,19 @@ public class LoginView implements ActionListener {
         userPassword.setBounds(70,150,90,25);
         userPasswordField.setBounds(155,148,200,25);
 
-        Return.setBounds(100,125,250,250);
 
         loginButton.setBounds(80,200,125,25);
+        loginButton.setBorder(border);
         loginButton.setFocusable(false);
+        loginButton.setForeground(Color.BLACK);
+        loginButton.setBackground(new Color(0xC4C2C2));
         loginButton.addActionListener(this);
 
         resetButton.setBounds(215,200,125,25);
         resetButton.setFocusable(false);
+        resetButton.setBorder(border);
+        resetButton.setForeground(Color.BLACK);
+        resetButton.setBackground(new Color (0xC4C2C2));
         resetButton.addActionListener(this);
 
         frame.setIconImage(icon.getImage());
@@ -51,7 +57,6 @@ public class LoginView implements ActionListener {
         frame.add(userPasswordField);
         frame.add(loginButton);
         frame.add(resetButton);
-        frame.add(Return);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setSize(420,420);
@@ -77,15 +82,12 @@ public class LoginView implements ActionListener {
           {
                    usernameField.setForeground(Color.GRAY);
                    userPasswordField.setForeground(Color.GRAY);
-                   Return.setFont(new Font(null,Font.BOLD,11));
-                   Return.setText("");
-                   PageAccueilAdminView Accueil = new PageAccueilAdminView();
+                   new PageAccueilAdminView();
+                   frame.dispose();
           }
           else
           {
-              Return.setForeground(Color.red);
-              Return.setFont(new Font(null,Font.BOLD,11));
-              Return.setText("Oops, un problème d'authentification.");
+             JOptionPane.showMessageDialog(null,"Oops, un problème d'authentification","Erreur",JOptionPane.ERROR_MESSAGE);
               usernameField.setText("");
               userPasswordField.setText("");
           }
