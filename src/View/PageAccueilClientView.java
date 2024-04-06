@@ -5,6 +5,17 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class PageAccueilClientView {
+    JButton Button1;
+    JButton Button2;
+
+    public JButton getButton1() {
+        return Button1;
+    }
+
+    public JButton getButton2() {
+        return Button2;
+    }
+
     public PageAccueilClientView() {
         JFrame frame = new JFrame();
 
@@ -16,8 +27,8 @@ public class PageAccueilClientView {
         label.setFont(new Font(null, Font.BOLD,25));
 
 
-        JButton Button1 = new JButton("Réservations");
-        JButton Button2 = new JButton("Exit");
+         Button1 = new JButton("Réservations");
+         Button2 = new JButton("Exit");
 
         Button1.setFocusable(false);
         Button1.setBounds(30,100,350,50);
@@ -38,5 +49,6 @@ public class PageAccueilClientView {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
     }

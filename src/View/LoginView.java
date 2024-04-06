@@ -16,6 +16,13 @@ public class LoginView implements ActionListener {
 
     JTextField usernameField = new JTextField() ;
 
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public JButton getResetButton() {
+        return resetButton;
+    }
 
     JPasswordField userPasswordField = new JPasswordField();
 

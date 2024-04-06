@@ -5,14 +5,36 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Controller.PageAccueilAdminController;
 
-public class PageAccueilAdminView implements ActionListener {
+public class PageAccueilAdminView  {
     JFrame frame;
     JButton Button1;
+
     JButton Button2;
     JButton Button3;
     JButton Button4;
     Border border ;
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public JButton getButton1() {
+        return Button1;
+    }
+
+    public JButton getButton2() {
+        return Button2;
+    }
+
+    public JButton getButton3() {
+        return Button3;
+    }
+
+    public JButton getButton4() {
+        return Button4;
+    }
     public PageAccueilAdminView()
     {
          frame = new JFrame();
@@ -24,10 +46,14 @@ public class PageAccueilAdminView implements ActionListener {
 
         border = BorderFactory.createLineBorder(new Color(0x857979),2);
 
-        Button1.addActionListener( this);
-        Button2.addActionListener( this);
-        Button3.addActionListener( this);
-        Button4.addActionListener( this);
+
+        PageAccueilAdminController controller = new PageAccueilAdminController(this);
+        Button1.addActionListener(controller);
+        Button2.addActionListener(controller);
+        Button3.addActionListener(controller);
+        Button4.addActionListener(controller);
+
+
 
         Button1.setFocusable(false);
         Button1.setBounds(30,30,350,50);
@@ -65,18 +91,5 @@ public class PageAccueilAdminView implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==Button3)
-        {
-            frame.dispose();
-            new ChambreView();
-        }
-        if (e.getSource()==Button4)
-        {
-            frame.dispose();
-        }
-
-
     }
-}
+

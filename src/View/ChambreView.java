@@ -10,6 +10,18 @@ public class ChambreView {
     JButton button2 ;
     JButton button3 ;
 
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton2() {
+        return button2;
+    }
+
+    public JButton getButton3() {
+        return button3;
+    }
+
     Border border;
 
     JTable chambres;
@@ -21,7 +33,7 @@ public class ChambreView {
     {
      frame = new JFrame("Chambres");
 
-     ImageIcon image = new ImageIcon("src/images/icon2.png");
+     ImageIcon image = new ImageIcon("src/images/5-stars.png");
      frame.setIconImage(image.getImage());
 
      String[]Columns = {"Numéro de la chambre","Status"};
