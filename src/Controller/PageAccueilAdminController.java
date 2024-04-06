@@ -1,7 +1,9 @@
 package Controller;
 
 import View.ChambreView;
+import View.ClientView;
 import View.PageAccueilAdminView;
+import View.ReservationView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +19,16 @@ public class PageAccueilAdminController implements ActionListener {
 
 
         public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButton1())
+            {
+                view.getFrame().dispose();
+                new ReservationView();
+            }
+            if (e.getSource()==view.getButton2())
+            {
+                view.getFrame().dispose();
+                new ClientView();
+            }
             if(e.getSource()==view.getButton3())
             {
                 view.getFrame().dispose();

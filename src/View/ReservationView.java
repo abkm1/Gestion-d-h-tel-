@@ -1,5 +1,8 @@
 package View;
 
+import Controller.PageAccueilAdminController;
+import Controller.ReservationController;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.TableColumn;
@@ -93,6 +96,11 @@ public class ReservationView {
         button3.setBackground(new Color(0xD2C6C6));
         button3.setForeground(Color.black);
         button3.setFocusable(false);
+
+        ReservationController controller = new ReservationController(this);
+        button1.addActionListener(controller);
+        button2.addActionListener(controller);
+        button3.addActionListener(controller);
 
 
         frame.add(scrollPane);

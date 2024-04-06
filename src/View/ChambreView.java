@@ -1,4 +1,6 @@
 package View;
+import Controller.ChambreController;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -9,6 +11,16 @@ public class ChambreView {
     JButton button1 ;
     JButton button2 ;
     JButton button3 ;
+
+    JButton button4;
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public JButton getButton4() {
+        return button4;
+    }
 
     public JButton getButton1() {
         return button1;
@@ -45,7 +57,7 @@ public class ChambreView {
      chambres.setBounds(80,80,100,100);
 
      scrollPane = new JScrollPane(chambres);
-     scrollPane.setBounds(60,60,300,200);
+     scrollPane.setBounds(60,60,300,210);
 
       border = BorderFactory.createLineBorder(new Color(0x857979),2);
 
@@ -67,10 +79,24 @@ public class ChambreView {
         button3.setBackground(new Color (0xD2C6C6));
         button3.setForeground(new Color (0xf));
         button3.setBorder(border);
+     button4 = new JButton("Menu Principal");
+        button4.setFocusable(false);
+        button4.setBounds(150,330,120,50);
+        button4.setBackground(new Color (0xD2C6C6));
+        button4.setForeground(new Color (0xf));
+        button4.setBorder(border);
+
+        ChambreController controller = new ChambreController(this);
+
+        button1.addActionListener(controller);
+        button2.addActionListener(controller);
+        button3.addActionListener(controller);
+        button4.addActionListener(controller);
 
      frame.add(button1);
      frame.add(button2);
      frame.add(button3);
+     frame.add(button4);
      frame.add(scrollPane);
      frame.setSize(450,450);
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

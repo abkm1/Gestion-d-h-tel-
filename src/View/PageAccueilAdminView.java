@@ -37,7 +37,10 @@ public class PageAccueilAdminView  {
     }
     public PageAccueilAdminView()
     {
-         frame = new JFrame();
+         frame = new JFrame("Menu Principal");
+
+         ImageIcon imageIcon = new ImageIcon("src/images/5-stars.png");
+         frame.setIconImage(imageIcon.getImage());
 
          Button1 = new JButton("Réservations");
          Button2 = new JButton("Clients");
@@ -83,7 +86,7 @@ public class PageAccueilAdminView  {
         frame.add(Button2);
         frame.add(Button3);
         frame.add(Button4);
-        frame.setSize(425,380);
+        frame.setSize(425,360);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setResizable(false);

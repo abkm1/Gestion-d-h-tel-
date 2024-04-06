@@ -1,5 +1,7 @@
 package View;
 
+import Controller.ClientController;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -8,10 +10,6 @@ public class ClientView {
 
     JFrame frame;
     JButton button1;
-
-    JButton button2;
-
-    JButton button3;
 
     public JFrame getFrame() {
         return frame;
@@ -23,13 +21,6 @@ public class ClientView {
         return button1;
     }
 
-    public JButton getButton2() {
-        return button2;
-    }
-
-    public JButton getButton3() {
-        return button3;
-    }
 
     JScrollPane scrollPane ;
 
@@ -48,26 +39,30 @@ public class ClientView {
 
         String [][] data = {{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
         ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
-        ,{"0001","Dendani","Safwane"}};
+        ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
+        ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}};
         String[] cols = {"ID client","Nom","Prénom"};
         table = new JTable(data,cols);
 
         scrollPane = new JScrollPane(table);
 
-        scrollPane.setBounds(60,50,300,100);
+        scrollPane.setBounds(40,50,400,195);
 
         button1 = new JButton("Menu Principal");
-        button1.setBounds(140,155,120,50);
+        button1.setBounds(160,255,120,50);
         button1.setBorder(border);
         button1.setBackground(new Color(0xD2C6C6));
         button1.setForeground(Color.black);
         button1.setFocusable(false);
 
+        ClientController controller = new ClientController (this);
+        button1.addActionListener(controller);
+
         frame.add(button1);
         frame.add(scrollPane);
         frame.setResizable(false);
         frame.setLayout(null);
-        frame.setSize(420, 300);
+        frame.setSize(480, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
