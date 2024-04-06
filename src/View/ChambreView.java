@@ -62,7 +62,7 @@ public class ChambreView {
      frame.add(scrollPane);
      frame.setSize(450,450);
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     frame.setLayout(null);
+     frame.setLayout(null);//null bah nbedel lbounds kima n7ab
      frame.setLocationRelativeTo(null);
      frame.setVisible(true);
     }
