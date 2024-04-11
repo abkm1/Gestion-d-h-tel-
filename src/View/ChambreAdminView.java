@@ -1,12 +1,12 @@
 package View;
-import Controller.ChambreController;
+import Controller.ChambreAdminController;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
 
-public class ChambreView {
+public class ChambreAdminView {
     JFrame frame ;
     JButton button1 ;
     JButton button2 ;
@@ -34,6 +34,10 @@ public class ChambreView {
         return button3;
     }
 
+    public void setButton4(JButton button4) {
+        this.button4 = button4;
+    }
+
     Border border;
 
     JTable chambres;
@@ -41,7 +45,7 @@ public class ChambreView {
     JScrollPane scrollPane ;
 
 
-    public ChambreView()
+    public ChambreAdminView()
     {
      frame = new JFrame("Chambres");
 
@@ -86,7 +90,7 @@ public class ChambreView {
         button4.setForeground(new Color (0xf));
         button4.setBorder(border);
 
-        ChambreController controller = new ChambreController(this);
+        ChambreAdminController controller = new ChambreAdminController(this);
 
         button1.addActionListener(controller);
         button2.addActionListener(controller);

@@ -6,10 +6,10 @@ import View.ReservationAdminView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ReservationController implements ActionListener {
+public class ReservationAdminController implements ActionListener {
     ReservationAdminView view ;
 
-    public ReservationController(ReservationAdminView view) {
+    public ReservationAdminController(ReservationAdminView view) {
         this.view = view;
     }
 

@@ -1,14 +1,13 @@
 package View;
 
-import Controller.PageAccueilAdminController;
-import Controller.ReservationController;
+import Controller.ReservationAdminController;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 
-public class ReservationView {
+public class ReservationAdminView {
 
     JFrame frame ;
 
@@ -40,7 +39,7 @@ public class ReservationView {
 
     ImageIcon icon ;
 
-    public ReservationView ()
+    public ReservationAdminView()
     {
         frame = new JFrame ("Réservations");
         icon = new ImageIcon("src/images/5-stars.png");
@@ -97,7 +96,7 @@ public class ReservationView {
         button3.setForeground(Color.black);
         button3.setFocusable(false);
 
-        ReservationController controller = new ReservationController(this);
+        ReservationAdminController controller = new ReservationAdminController(this);
         button1.addActionListener(controller);
         button2.addActionListener(controller);
         button3.addActionListener(controller);

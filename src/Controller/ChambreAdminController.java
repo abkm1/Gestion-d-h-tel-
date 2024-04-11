@@ -6,10 +6,10 @@ import View.PageAccueilAdminView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChambreController implements ActionListener {
+public class ChambreAdminController implements ActionListener {
     ChambreAdminView view ;
 
-    public ChambreController(ChambreAdminView view) {
+    public ChambreAdminController(ChambreAdminView view) {
         this.view = view;
     }
 
