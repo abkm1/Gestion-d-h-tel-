@@ -1,15 +1,15 @@
 package Controller;
 
-import View.ChambreView;
+import View.ChambreAdminView;
 import View.PageAccueilAdminView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChambreController implements ActionListener {
-    ChambreView view ;
+    ChambreAdminView view ;
 
-    public ChambreController(ChambreView view) {
+    public ChambreController(ChambreAdminView view) {
         this.view = view;
     }
 

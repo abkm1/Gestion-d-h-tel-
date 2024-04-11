@@ -1,16 +1,15 @@
 package Controller;
 
 import View.PageAccueilAdminView;
-import View.PageAccueilClientView;
-import View.ReservationView;
+import View.ReservationAdminView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ReservationController implements ActionListener {
-    ReservationView view ;
+    ReservationAdminView view ;
 
-    public ReservationController(ReservationView view) {
+    public ReservationController(ReservationAdminView view) {
         this.view = view;
     }
 
