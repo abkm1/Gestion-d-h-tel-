@@ -10,7 +10,6 @@ public class Chambre {
     }
 
 
-
     public void setNumChambre(int numChambre) {
         this.numChambre = numChambre;
     }

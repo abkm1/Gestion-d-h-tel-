@@ -49,8 +49,7 @@ public class PageAccueilClientView {
 
 
          Button1 = new JButton("Réservations");
-         Button2 = new JButton("Chambres");
-         Button3 = new JButton("Exit");
+         Button2 = new JButton("Exit");
 
 
         Button1.setFocusable(false);
@@ -65,26 +64,17 @@ public class PageAccueilClientView {
         Button2.setFont(new Font(null,Font.BOLD,20));
         Button2.setBorder(border);
 
-        Button3.setFocusable(false);
-        Button3.setBounds(30,240,350,50);
-        Button3.setBackground(new Color(0xD2C6C6));
-        Button3.setFont(new Font(null,Font.BOLD,20));
-        Button3.setBorder(border);
 
         PageAccueilClientController controller = new PageAccueilClientController(this);
 
         Button1.addActionListener(controller);
         Button2.addActionListener(controller);
-        Button3.addActionListener(controller);
-
-
 
 
         frame.add(label);
         frame.add(Button1);
         frame.add(Button2);
-        frame.add(Button3);
-        frame.setSize(420,420);
+        frame.setSize(420,300);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setResizable(false);
