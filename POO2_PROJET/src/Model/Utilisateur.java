@@ -3,13 +3,17 @@ package Model;
 public class Utilisateur {
     protected  String nom ;
     protected String prenom ;
-    protected String ID ;
+    protected static int IDstatic ;
+    protected int Id;
+    private String username;
+    private String Mdp;
 
-    public Utilisateur (String nom, String prenom,String ID)
+    public Utilisateur (String nom, String prenom ,String username,String Mdp)
     {
         this.nom = nom ;
         this.prenom = prenom ;
-        this.ID = ID ;
+        this.Id=IDstatic;
+        this.IDstatic++;
     }
 
     public String getNom() {
@@ -20,8 +24,23 @@ public class Utilisateur {
         return prenom;
     }
 
-    public String getID() {
-        return ID;
+    public int getId() {
+        return Id;
+    }
+    public String getUsername() {
+        return this.username;
+    }
+
+    public String getMdp() {
+        return Mdp;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setMdp(String mdp) {
+        Mdp = mdp;
     }
 
     public void setNom(String nom) {
@@ -32,9 +51,6 @@ public class Utilisateur {
         this.prenom = prenom;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
-    }
 
 
 }

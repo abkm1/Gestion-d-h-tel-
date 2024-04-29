@@ -1,8 +1,8 @@
 package Model;
 
 public class Admin extends Utilisateur{
-    public Admin(String nom, String prenom, String ID) {
-        super(nom, prenom, ID);
+    public Admin(String nom, String prenom,String username , String mdp) {
+        super(nom, prenom,username,mdp);
     }
 
     @Override
@@ -16,8 +16,8 @@ public class Admin extends Utilisateur{
     }
 
     @Override
-    public String getID() {
-        return super.getID();
+    public int getId() {
+        return super.getId();
     }
 
     @Override
@@ -31,33 +31,29 @@ public class Admin extends Utilisateur{
     }
 
     @Override
-    public void setID(String ID) {
-        super.setID(ID);
-    }
-
-    @Override
     public String toString() {
         return "Admin{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", ID='" + ID + '\'' +
+                ", ID='" + Id + '\'' +
                 '}';
     }
 
+    public void Ajouter_Reservation(){}
+    public void Modifier_Reservation(){}
+
+    public boolean AccepterReservation(Reservation Rservation ){
+        boolean b =false;
+
+        return b;
+    }
+    public void DeclinerReservation(){
+
+    }
     public void AjouterChambre(){
 
     }
-
     public void SupprimerChambre(){
-
-    }
-    public void AjouterClient(){
-
-    }
-    public void AjouterReservation(){
-
-    }
-    public void SupprimerResevation(){
 
     }
 }

@@ -3,33 +3,57 @@ package Model;
 public class Reservation {
     private Chambre chambre  ;
     private Client client ;
-    private int IdRservation;
-    private static int  ID ;
+    private static int  IDstatic ;
+    private int  ID;
 
-    public Reservation(Chambre chambre, Client client) {
-        this.IdRservation=ID;
+    private LaDate DateDebut;
+    private LaDate DateFin;
+
+    public Reservation(Chambre chambre, Client client,LaDate DateDebut, LaDate DateFin) {
+
         this.chambre = chambre;
         this.client = client;
-        ID ++ ;
+        this.ID=IDstatic;
+        DateDebut=  DateDebut;
+        DateFin =DateFin;
+        this.IDstatic ++ ;
+    }
+
+    public static int getIDstatic() {
+        return IDstatic;
+    }
+
+    public LaDate getDateDebut() {
+        return DateDebut;
+    }
+
+    public LaDate getDateFin() {
+        return DateFin;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public Chambre getChambre() {
+        return chambre;
+    }
+
+    public void setDateDebut(LaDate dateDebut) {
+        DateDebut = dateDebut;
+    }
+
+    public void setDateFin(LaDate dateFin) {
+        DateFin = dateFin;
+    }
+
+    public void setChambre(Chambre chambre) {this.chambre = chambre;}
+
+    public Client getClient() {
+        return client;
     }
 
     public void setClient(Client client) {
         this.client = client;
     }
-
-    public void setChambre(Chambre chambre) {
-        this.chambre = chambre;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-    public int getIdRservation() {
-        return IdRservation;
-    }
-    public Chambre getChambre() {
-        return chambre;
-    }
-
-
 }

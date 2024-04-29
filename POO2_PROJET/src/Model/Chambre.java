@@ -1,14 +1,22 @@
 package Model;
 
 public class Chambre {
-    public static int numChambre;
-    public int numeroCh;
+    public static int nbrCh;
+    public int numChambre;
     private  boolean status ;
 
     public Chambre(boolean status ) {
-        this.numeroCh=numChambre;
+
+        this.numChambre = nbrCh;
         this.status = status ;
-        numChambre++;
+        nbrCh++;
+
+    }
+
+
+
+    public void setNumChambre(int numChambre) {
+        this.numChambre = numChambre;
     }
 
     public boolean isStatus() {
