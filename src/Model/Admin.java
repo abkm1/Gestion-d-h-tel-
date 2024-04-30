@@ -1,8 +1,8 @@
 package Model;
 
 public class Admin extends Utilisateur{
-    public Admin(String nom, String prenom, String ID) {
-        super(nom, prenom, ID);
+    public Admin(String nom, String prenom, String ID, String username) {
+        super(nom, prenom, ID, username);
     }
 
     @Override
@@ -42,5 +42,49 @@ public class Admin extends Utilisateur{
                 ", prenom='" + prenom + '\'' +
                 ", ID='" + ID + '\'' +
                 '}';
+    }
+
+    public void acceptReservation(Reservation reservation){
+        if (reservation.getChambre().isReserved()){
+            System.out.println("this room is already reserved");
+            return;
+        }
+        if(LaDate.aujourdhui().estApres(reservation.getDate_fin()) ){
+            System.out.println("you can't accept this reservation");
+            return;
+        }
+
+        reservation.setEtat("accepted");
+
+    }
+
+    public void refuseReservation(Reservation reservation){
+        reservation.setEtat("declined");
+
+    }
+
+    public void AjouterChambre(int num){
+        if (Hotel.getChambres().containsKey(num)) {
+            System.out.println("this Room already exists");
+            return;
+        }
+        Hotel.ajouterChambre(num);
+
+    }
+    public void SupprimerChambre(int num){
+
+        if (Hotel.getChambres().containsKey(num)) {
+            Hotel.supprimerChambre(num);
+            return;
+        }
+        System.out.println("this Room doesn't even exist");
+    }
+
+    public void Modifier_Reservation(Reservation reservation, LaDate date){
+        if(LaDate.aujourdhui().estApres(date) ){
+            System.out.println("This date has already passed");
+            return;
+        }
+        reservation.setDate_fin(date);
     }
 }
