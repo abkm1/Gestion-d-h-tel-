@@ -6,4 +6,3 @@ le projet de gestion d'un hotel pour le s4.
 - Abdelkarim Guenane(abkm1)
 - Mohamed Said Naïl Chelali(Nail000)
 - Safwane Souhil Dendani (wanesaf)
-
