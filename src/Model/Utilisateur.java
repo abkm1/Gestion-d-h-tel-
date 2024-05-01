@@ -3,15 +3,19 @@ package Model;
 public class Utilisateur {
     protected  String nom ;
     protected String prenom ;
-    protected String ID ;
+    protected String password ;
     protected String username;
 
-    public Utilisateur (String nom, String prenom,String ID, String username)
+    public Utilisateur (String nom, String prenom,String password, String username)
     {
         this.nom = nom ;
         this.prenom = prenom ;
-        this.ID = ID ;
+        this.password = password ;
         this.username = username;
+    }
+
+    public Utilisateur() {
+
     }
 
     public String getNom() {
@@ -22,8 +26,8 @@ public class Utilisateur {
         return prenom;
     }
 
-    public String getID() {
-        return ID;
+    public String getpassword() {
+        return password;
     }
 
     public void setNom(String nom) {
@@ -34,9 +38,7 @@ public class Utilisateur {
         this.prenom = prenom;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
-    }
+
 
     public String getUsername() {
         return username;
@@ -44,5 +46,9 @@ public class Utilisateur {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+    public Utilisateur getUtilisateur ()
+    {
+        return this ;
     }
 }

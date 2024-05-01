@@ -9,12 +9,12 @@ public class Reservation {
     private LaDate date_fin;
 
 
-    public Reservation(Chambre chambre, Client client, LaDate fin ) {
+    public Reservation(Chambre chambre, Client client, LaDate debut, LaDate fin ) {
         ID ++ ;
         this.chambre = chambre;
         this.client = client;
         this.etat = "hold";
-        this.date_debut = LaDate.aujourdhui() ;
+        this.date_debut = debut ;
         this.date_fin = fin;
     }
 
@@ -52,6 +52,10 @@ public class Reservation {
 
     public LaDate getDate_debut() {
         return date_debut;
+    }
+
+    public void setDate_debut(LaDate date_debut) {
+        this.date_debut = date_debut;
     }
 
     public LaDate getDate_fin() {

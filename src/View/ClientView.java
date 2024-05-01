@@ -4,12 +4,18 @@ import Controller.ClientController;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class ClientView {
 
     JFrame frame;
     JButton button1;
+    JButton button2 ;
+
+    public JButton getButton2() {
+        return button2;
+    }
 
     public JFrame getFrame() {
         return frame;
@@ -21,6 +27,15 @@ public class ClientView {
         return button1;
     }
 
+    DefaultTableModel model;
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public void resetModel() {
+        this.model =   new DefaultTableModel(new Object[]{"username", "Nom", "Prénom"}, 0);
+    }
 
     JScrollPane scrollPane ;
 
@@ -36,13 +51,11 @@ public class ClientView {
 
         border = BorderFactory.createLineBorder(new Color (0x857979),2);
 
+         model = new DefaultTableModel(new Object[]{"username", "Nom", "Prénom"}, 0);
 
-        String [][] data = {{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
-        ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
-        ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}
-        ,{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"},{"0001","Dendani","Safwane"}};
-        String[] cols = {"ID client","Nom","Prénom"};
-        table = new JTable(data,cols);
+
+        table = new JTable(model);
+
 
         scrollPane = new JScrollPane(table);
 
@@ -55,10 +68,19 @@ public class ClientView {
         button1.setForeground(Color.black);
         button1.setFocusable(false);
 
+        button2 = new JButton("Show/Refresh");
+        button2.setBounds(160,300,120,50);
+        button2.setBorder(border);
+        button2.setBackground(new Color(0xD2C6C6));
+        button2.setForeground(Color.black);
+        button2.setFocusable(false);
+
         ClientController controller = new ClientController (this);
         button1.addActionListener(controller);
+        button2.addActionListener(controller);
 
         frame.add(button1);
+        frame.add(button2);
         frame.add(scrollPane);
         frame.setResizable(false);
         frame.setLayout(null);

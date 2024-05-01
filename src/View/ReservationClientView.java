@@ -1,10 +1,10 @@
 package View;
 
-import Controller.PageAccueilClientController;
 import Controller.ReservationClientController;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class ReservationClientView {
@@ -20,6 +20,8 @@ public class ReservationClientView {
     JButton button8;
     JButton button9;
 
+    JButton button10;
+
     JFrame frame1  ;
     JFrame frame2  ;
     JFrame frame3  ;
@@ -33,6 +35,11 @@ public class ReservationClientView {
     JTextField textField4;
     JTextField textField5;
     JTextField textField6;
+    JTextField textField7;
+    JTextField textField8;
+    JTextField textField9;
+    JTextField textField10;
+
 
     JLabel label1;
     JLabel label2;
@@ -46,6 +53,63 @@ public class ReservationClientView {
     JScrollPane scrollPane2;
     JTable chambres ;
     JTable reserv ;
+
+    DefaultTableModel model ;
+    DefaultTableModel model2 ;
+
+
+
+    public JTextField getTextField1() {
+        return textField1;
+    }
+
+    public JTextField getTextField2() {
+        return textField2;
+    }
+
+    public JTextField getTextField3() {
+        return textField3;
+    }
+
+    public JTextField getTextField4() {
+        return textField4;
+    }
+
+    public JTextField getTextField5() {
+        return textField5;
+    }
+
+    public JTextField getTextField6() {
+        return textField6;
+    }
+
+    public JTextField getTextField7() {
+        return textField7;
+    }
+
+    public JTextField getTextField8() {
+        return textField8;
+    }
+
+    public JTextField getTextField9() {
+        return textField9;
+    }
+
+    public JTextField getTextField10() {
+        return textField10;
+    }
+
+
+
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public DefaultTableModel getModel2() {
+        return model2;
+    }
+
 
     Border border ;
 
@@ -78,6 +142,8 @@ public class ReservationClientView {
 
     public JButton getButton9() {return button9;}
 
+    public JButton getButton10() {return button10;}
+
     public JFrame getFrame1() {
         return frame1;
     }
@@ -102,12 +168,9 @@ public class ReservationClientView {
         frame4.setIconImage(icon.getImage());
 
 
-        String[]Columns = {"Numéro de la chambre","Status"};
-        String[][]data = {{"1","Réservée"},{"2","Réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"}
-                ,{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"}
-                ,{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"},{"3","Non réservée"}};//hado oumb3d ytbdlo pisk hard code
+        model = new DefaultTableModel(new Object[]{"Numéro de la chambre ","Status"},0);
 
-        chambres = new JTable(data,Columns);
+        chambres = new JTable(model);
         chambres.setBounds(80,80,100,100);
 
         scrollPane1 = new JScrollPane(chambres);
@@ -175,12 +238,23 @@ public class ReservationClientView {
         textField2 = new JTextField();
         textField3 = new JTextField();
 
+        textField7 = new JTextField();
+        textField8= new JTextField();
+        textField9 = new JTextField();
+        textField10 = new JTextField();
+
         label1.setBounds(20,18,250,50);
-        textField1.setBounds(160,29,150,25);
+        textField1.setBounds(160,29,80,25);
         label2.setBounds(20,56,250,50);
-        textField2.setBounds(204,68,150,25);
+        textField2.setBounds(204,68,40,25);
         label3.setBounds(20,94,250,50);
-        textField3.setBounds(185,107,150,25);
+        textField3.setBounds(204,107,40,25);
+
+        textField7.setBounds(264,68,40,25);
+        textField8.setBounds(324,68,80,25);
+
+        textField9.setBounds(264,107,40,25);
+        textField10.setBounds(324,107,80,25);
 
         //kayn probleme hna rahom ykhtafiw hado
         frame2.add(label1);
@@ -189,6 +263,11 @@ public class ReservationClientView {
         frame2.add(textField2);
         frame2.add(label3);
         frame2.add(textField3);
+        frame2.add(textField7);
+        frame2.add(textField8);
+        frame2.add(textField9);
+        frame2.add(textField10);
+
 
         button5 = new JButton("Ok");
         button5.setBorder(border);
@@ -213,16 +292,25 @@ public class ReservationClientView {
         frame2.setSize(500,230);
         frame2.setLocationRelativeTo(null);
 
-        String[]Columns2 = {"Numéro de la chambre","Date de début de Réservation","Date de fin de réservation","Etat de demande"};
-        String[][]data2 = {{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},{"1","1/2/2024","2/2/2024","Accepté"},
-                {"1","1/2/2024","2/2/2024","Accepté"}};
+        model2 = new DefaultTableModel(new Object[]{"Numéro de la chambre ", "Date debut", "Date fin", "Etat de la demande"}, 0);
 
-        reserv = new JTable(data2,Columns2);
+        reserv = new JTable(model2);
         scrollPane2 = new JScrollPane(reserv);
         scrollPane2.setBounds(30,80,800,100);
         frame3.add(scrollPane2);
 
 
+        button10 = new JButton("Show/Refresh");
+        button10.setBorder(border);
+        button10.setBounds(300,240,80,25);
+        button10.setBackground(new Color (0xD2C6C6));
+        button10.setForeground(new Color (0xf));
+        button10.setFocusable(false);
+
+
+
+
+        frame3.add(button10);
         frame3.add(button2);
         frame3.add(button3);
         frame3.setResizable(false);
@@ -284,6 +372,9 @@ public class ReservationClientView {
         button5.addActionListener(controller);
         button6.addActionListener(controller);
         button7.addActionListener(controller);
+        button8.addActionListener(controller);
+        button9.addActionListener(controller);
+        button10.addActionListener(controller);
 
     }
 }
