@@ -3,51 +3,28 @@ package Model;
 public class Reservation {
     private Chambre chambre  ;
     private Client client ;
-    private static int  IDstatic ;
-    private int  ID;
+    private String etat;
+    static private int ID = 0;
+    private  LaDate date_debut;
+    private LaDate date_fin;
 
-    private LaDate DateDebut;
-    private LaDate DateFin;
 
-    public Reservation(Chambre chambre, Client client,LaDate DateDebut, LaDate DateFin) {
-
+    public Reservation(Chambre chambre, Client client, LaDate debut, LaDate fin ) {
+        ID ++ ;
         this.chambre = chambre;
         this.client = client;
-        this.ID=IDstatic;
-        DateDebut=  DateDebut;
-        DateFin =DateFin;
-        this.IDstatic ++ ;
-    }
-
-    public static int getIDstatic() {
-        return IDstatic;
-    }
-
-    public LaDate getDateDebut() {
-        return DateDebut;
-    }
-
-    public LaDate getDateFin() {
-        return DateFin;
-    }
-
-    public int getID() {
-        return ID;
+        this.etat = "hold";
+        this.date_debut = debut ;
+        this.date_fin = fin;
     }
 
     public Chambre getChambre() {
         return chambre;
     }
 
-    public void setDateDebut(LaDate dateDebut) {
-        DateDebut = dateDebut;
+    public void setChambre(Chambre chambre) {
+        this.chambre = chambre;
     }
-
-    public void setDateFin(LaDate dateFin) {
-        DateFin = dateFin;
-    }
-
-    public void setChambre(Chambre chambre) {this.chambre = chambre;}
 
     public Client getClient() {
         return client;
@@ -55,5 +32,37 @@ public class Reservation {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public LaDate getDate_debut() {
+        return date_debut;
+    }
+
+    public void setDate_debut(LaDate date_debut) {
+        this.date_debut = date_debut;
+    }
+
+    public LaDate getDate_fin() {
+        return date_fin;
+    }
+
+    public void setDate_fin(LaDate date_fin) {
+        this.date_fin = date_fin;
     }
 }

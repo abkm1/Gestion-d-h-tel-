@@ -1,29 +1,27 @@
 package Model;
 
 public class Chambre {
-    public static int nbrCh;
     public int numChambre;
-    private  boolean status ;
+   private  boolean reserved;
 
-    public Chambre(boolean status ) {
-
-        this.numChambre = nbrCh;
-        this.status = status ;
-        nbrCh++;
-
+    public Chambre(int numChambre) {
+        this.numChambre = numChambre;
+        this.reserved = false ;
     }
 
-
+    public int getNumChambre() {
+        return numChambre;
+    }
 
     public void setNumChambre(int numChambre) {
         this.numChambre = numChambre;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isReserved() {
+        return reserved;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

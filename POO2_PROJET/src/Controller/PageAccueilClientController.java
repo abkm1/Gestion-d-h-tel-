@@ -28,11 +28,6 @@ public class PageAccueilClientController implements ActionListener {
         if (e.getSource()==view.getButton2())
         {
             view.getFrame().dispose();
-            new ChambreClientView();
-        }
-        if (e.getSource()==view.getButton3())
-        {
-            view.getFrame().dispose();
         }
     }
 }

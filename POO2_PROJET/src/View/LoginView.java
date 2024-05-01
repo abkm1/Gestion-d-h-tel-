@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class LoginView  {
 
-    JFrame frame = new JFrame();
+    JFrame frame = new JFrame("Hotel Rahma");
 
     public HashMap<String, String> getLoginInfo() {
         return LoginInfo;
@@ -39,7 +39,7 @@ public class LoginView  {
 
     Border border = BorderFactory.createLineBorder(new Color(0xf),1);
     JButton loginButton = new JButton("Se connecter");
-    JButton resetButton = new JButton("Réinitialiser");
+    JButton SignupButton = new JButton("Créer compte");
 
     JTextField usernameField = new JTextField() ;
 
@@ -48,7 +48,7 @@ public class LoginView  {
     }
 
     public JButton getResetButton() {
-        return resetButton;
+        return SignupButton;
     }
 
     JPasswordField userPasswordField = new JPasswordField();
@@ -76,25 +76,24 @@ public class LoginView  {
         loginButton.setBackground(new Color(0xC4C2C2));
 
 
-        resetButton.setBounds(215,200,125,25);
-        resetButton.setFocusable(false);
-        resetButton.setBorder(border);
-        resetButton.setForeground(Color.BLACK);
-        resetButton.setBackground(new Color (0xC4C2C2));
+        SignupButton.setBounds(215,200,125,25);
+        SignupButton.setFocusable(false);
+        SignupButton.setBorder(border);
+        SignupButton.setForeground(Color.BLACK);
+        SignupButton.setBackground(new Color (0xC4C2C2));
 
 
         LoginController controller = new LoginController(this);
         loginButton.addActionListener(controller);
-        resetButton.addActionListener(controller);
+        SignupButton.addActionListener(controller);
 
         frame.setIconImage(icon.getImage());
-        frame.setTitle("Hotel Rahma ");
         frame.add(username);
         frame.add(userPassword);
         frame.add(usernameField);
         frame.add(userPasswordField);
         frame.add(loginButton);
-        frame.add(resetButton);
+        frame.add(SignupButton);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setSize(420,420);

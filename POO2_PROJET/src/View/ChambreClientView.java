@@ -25,7 +25,7 @@ public class ChambreClientView  {
 
     public ChambreClientView ()
     {
-         frame = new JFrame("Chambres");
+        frame = new JFrame("Chambres");
         ImageIcon image = new ImageIcon("src/images/5-stars.png");
         frame.setIconImage(image.getImage());
 

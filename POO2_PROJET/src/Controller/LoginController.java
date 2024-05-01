@@ -1,10 +1,14 @@
 package Controller;
 
+import Model.Admin;
+import Model.CurrentClient;
+import Model.Hotel;
 import View.LoginView;
 import View.PageAccueilAdminView;
+import View.PageAccueilClientView;
+import View.SignUpView;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,13 +19,11 @@ public class LoginController implements ActionListener {
         this.view = view;
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==view.getResetButton())
         {
-            view.getUsernameField().setText("");
-            view.getUserPasswordField().setText("");
+        new SignUpView();
         }
         if(e.getSource()==view.getLoginButton())
         {
@@ -29,11 +31,17 @@ public class LoginController implements ActionListener {
             String password = String.valueOf(view.getUserPasswordField().getPassword());
 
 
-            if(view.getLoginInfo().containsKey(username) && (view.getLoginInfo().get(username).equals(password)))
-            {
-                view.getFrame().dispose();
-                new PageAccueilAdminView();
+            if(Hotel.getUtilisateurs().containsKey(username) && (Hotel.getUtilisateurs().get(username).getpassword().equals(password))) {
+
+                if (Hotel.getUtilisateurs().get(username) instanceof Admin) {
+                    CurrentClient.username = username;
+                    new PageAccueilAdminView();
+                } else {
+                    CurrentClient.username = username;
+                    new PageAccueilClientView();
+                }
             }
+
             else
             {
                 JOptionPane.showMessageDialog(null,"Oops, un problème d'authentification","Erreur",JOptionPane.ERROR_MESSAGE);

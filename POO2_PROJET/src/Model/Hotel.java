@@ -7,9 +7,7 @@ public class Hotel {
     private static  Map<String, Utilisateur> utilisateurs = new HashMap<>();
 
     // Méthodes de gestion des chambres
-    public static void ajouterChambre(Chambre chambre) {
-        chambres.put(chambre.numChambre, chambre);
-    }
+    public static void ajouterChambre(int num) {chambres.put(num, new Chambre(num));}
 
     public static void supprimerChambre(int numeroChambre) {
         chambres.remove(numeroChambre);
