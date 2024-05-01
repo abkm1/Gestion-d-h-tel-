@@ -5,6 +5,10 @@ public class Admin extends Utilisateur{
         super(nom, prenom, ID, username);
     }
 
+    public Admin() {
+        super();
+    }
+
     @Override
     public String getNom() {
         return super.getNom();
@@ -16,8 +20,8 @@ public class Admin extends Utilisateur{
     }
 
     @Override
-    public String getID() {
-        return super.getID();
+    public String getpassword() {
+        return super.getpassword();
     }
 
     @Override
@@ -30,17 +34,13 @@ public class Admin extends Utilisateur{
         super.setPrenom(prenom);
     }
 
-    @Override
-    public void setID(String ID) {
-        super.setID(ID);
-    }
+
 
     @Override
     public String toString() {
         return "Admin{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", ID='" + ID + '\'' +
                 '}';
     }
 
@@ -63,21 +63,20 @@ public class Admin extends Utilisateur{
 
     }
 
-    public void AjouterChambre(int num){
+    public boolean AjouterChambre(int num){
         if (Hotel.getChambres().containsKey(num)) {
-            System.out.println("this Room already exists");
-            return;
+            return false;
         }
         Hotel.ajouterChambre(num);
-
+        return true ;
     }
-    public void SupprimerChambre(int num){
+    public boolean  SupprimerChambre(int num){
 
-        if (Hotel.getChambres().containsKey(num)) {
+        if ((Hotel.getChambres().containsKey(num))&&!(Hotel.getChambres().get(num).isReserved())) {
             Hotel.supprimerChambre(num);
-            return;
+            return true;
         }
-        System.out.println("this Room doesn't even exist");
+            return false  ;
     }
 
     public void Modifier_Reservation(Reservation reservation, LaDate date){

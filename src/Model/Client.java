@@ -1,8 +1,12 @@
 package Model;
 
 public class Client extends Utilisateur{
-    public Client(String nom, String prenom, String ID, String utilisateur) {
-        super(nom, prenom, ID,utilisateur);
+    public Client(String nom, String prenom, String password, String utilisateur) {
+        super(nom, prenom, password,utilisateur);
+    }
+
+    public Client() {
+        super();
     }
 
     @Override
@@ -16,8 +20,8 @@ public class Client extends Utilisateur{
     }
 
     @Override
-    public String getID() {
-        return super.getID();
+    public String getpassword() {
+        return super.getpassword();
     }
 
     @Override
@@ -30,29 +34,26 @@ public class Client extends Utilisateur{
         super.setPrenom(prenom);
     }
 
-    @Override
-    public void setID(String ID) {
-        super.setID(ID);
-    }
+
 
     @Override
     public String toString() {
         return "Client{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", ID='" + ID + '\'' +
                 '}';
     }
 
-    public void demand(int num){
+    public void demand(int num, LaDate debut, LaDate fin){
         if(!Hotel.getChambres().containsKey(num)){
-            System.out.println("this room doesn't exist");
-            return;/// but we can build JUST FOR YOU if you a small fee :D
+
+            return  ;
         }
 
-        LaDate date = null; // njibouha mn l input
+        Reservation reservation = new Reservation(Hotel.getChambres().get(num),this, debut, fin);
+        Hotel.ajouterReservation(reservation);
 
-        Reservation reservation = new Reservation(Hotel.getChambres().get(num),this, date);
+       // return true ;
 
     }
 
