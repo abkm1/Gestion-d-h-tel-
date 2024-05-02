@@ -165,8 +165,13 @@ public class ChambreAdminView {
 
 
 
+
     JTextField field2;
     JLabel label2;
+
+    public JTextField getField2() {
+        return field2;
+    }
 
     public JButton getButton5() {
         return button5;
