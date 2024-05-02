@@ -164,9 +164,13 @@ public class ChambreAdminView {
     }
 
 
-
     JTextField field2;
     JLabel label2;
+
+    public JTextField getField2() {
+        return field2;
+    }
+
 
     public JButton getButton5() {
         return button5;
@@ -259,16 +263,6 @@ public class ChambreAdminView {
 
 
 
-        frame3 = new JFrame("Supprimer Chambre");
-        field2 = new JTextField();
-        field2.setBounds(180,38,100,25);
-        label2 = new JLabel("Numéro de la chambre :");
-        label2.setBounds(20,0,200,100);
-        label2.setFont(new Font (null,Font.BOLD,13));
-
-
-
-
         frame2.add(label);
         frame2.add(field);
         frame2.add(button5);
@@ -280,7 +274,12 @@ public class ChambreAdminView {
         frame2.setLayout(null);
 
 
-
+        frame3 = new JFrame("Supprimer Chambre");
+        field2 = new JTextField();
+        field2.setBounds(180,38,100,25);
+        label2 = new JLabel("Numéro de la chambre :");
+        label2.setBounds(20,0,200,100);
+        label2.setFont(new Font (null,Font.BOLD,13));
 
         button7 = new JButton("OK");
         button7.setFocusable(false);
@@ -325,6 +324,7 @@ public class ChambreAdminView {
 
 
     }
+
 
 
 }

@@ -42,4 +42,13 @@ public class Hotel {
     public static Map<String, Utilisateur> getUtilisateurs() {
         return utilisateurs;
     }
+
+    public static void Start(){
+        int z;
+        for ( z = 1 ; z<11 ; z++){
+            Hotel.ajouterChambre(z);
+        }
+        Admin nail = new Admin("a","a","a","a");
+
+    }
 }

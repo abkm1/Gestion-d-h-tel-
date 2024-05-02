@@ -58,8 +58,8 @@ public class LoginView  {
 
 
     HashMap<String,String> LoginInfo = new HashMap <String,String>();
-    public LoginView(HashMap<String, String> LoginInfoOriginal) {
-        LoginInfo = LoginInfoOriginal ;
+    public LoginView() {
+       // LoginInfo = LoginInfoOriginal ;
 
         ImageIcon icon = new ImageIcon("src/images/5-stars.png");
 

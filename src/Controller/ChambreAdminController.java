@@ -73,11 +73,10 @@ public class ChambreAdminController implements ActionListener {
 
         if (e.getSource() == view.getButton7()) {
             admin = new Admin();
-            admin.SupprimerChambre(Integer.parseInt(view.getField().getText()));
+            int number = Integer.parseInt(view.getField2().getText());
+            //System.out.println("Input text: \"" + view.getField() + "\"");
+                  try {
 
-
-                  /*  try {
-                        int number = Integer.parseInt(view.getField().getText());
                         if (number <= 0) {
                             JOptionPane.showMessageDialog(null, "Entrez un nombre positif", "Error", JOptionPane.ERROR_MESSAGE);
                             view.getField().setText("");
@@ -88,13 +87,20 @@ public class ChambreAdminController implements ActionListener {
                         } else {
                             Map<Integer, Chambre> map = Hotel.getChambres();
                             Map<Integer, Chambre> sortedMap = new TreeMap<>(map);
-                            int rowindex = sortedMap.
+                            view.getModel().setRowCount(0);
+                            for (Map.Entry<Integer, Chambre> entry : sortedMap.entrySet()) {
+                                if (entry.getValue().isReserved()) {
+                                    view.getModel().addRow(new Object[]{entry.getKey(), "Réservée"});
+                                } else {
+                                    view.getModel().addRow(new Object[]{entry.getKey(), "Non Réservée"});
+                                }
+                            }
                         }
-                    } catch (NumberFormatException ex) {
+                  } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(null, "Entrez un nombre", "Error", JOptionPane.ERROR_MESSAGE);
                         view.getField().setText("");
                     }
-                    */
+
             }
 
             if (e.getSource() == view.getButton8()) {

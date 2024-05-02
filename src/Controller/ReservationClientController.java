@@ -121,7 +121,7 @@ public class ReservationClientController implements ActionListener {
             view.getModel2().setRowCount(0);
             for (Map.Entry<Integer, Reservation> entry : sortedMap.entrySet()) {
                 if(entry.getValue().getClient().getUsername().equals(CurrentClient.username)) {
-                    view.getModel2().addRow(new Object[]{entry.getKey().toString(), entry.getValue().getDate_debut().toString(),entry.getValue().getDate_fin().toString(),entry.getValue().getEtat()});
+                    view.getModel2().addRow(new Object[]{entry.getValue().getChambre().getNumChambre(), entry.getValue().getDate_debut().toString(),entry.getValue().getDate_fin().toString(),entry.getValue().getEtat()});
                 }
             }
 
