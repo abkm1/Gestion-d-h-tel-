@@ -21,6 +21,7 @@ public class ReservationClientView {
     JButton button9;
 
     JButton button10;
+    JButton refresh;
 
     JFrame frame1  ;
     JFrame frame2  ;
@@ -39,6 +40,13 @@ public class ReservationClientView {
     JTextField textField8;
     JTextField textField9;
     JTextField textField10;
+    // 11 ta3 annulation
+    JTextField textField11;
+
+    JTextField textField12;
+    JTextField textField13;
+    JTextField textField14;
+    JTextField textField15;
 
 
     JLabel label1;
@@ -57,7 +65,9 @@ public class ReservationClientView {
     DefaultTableModel model ;
     DefaultTableModel model2 ;
 
-
+    public JButton getRefresh() {
+        return refresh;
+    }
 
     public JTextField getTextField1() {
         return textField1;
@@ -97,6 +107,23 @@ public class ReservationClientView {
 
     public JTextField getTextField10() {
         return textField10;
+    }
+
+    public JTextField getTextField11() {
+        return textField11;
+    }
+
+    public JTextField getTextField12() {
+        return textField12;
+    }
+    public JTextField getTextField13() {
+        return textField13;
+    }
+    public JTextField getTextField14() {
+        return textField14;
+    }
+    public JTextField getTextField15() {
+        return textField15;
     }
 
 
@@ -204,6 +231,16 @@ public class ReservationClientView {
         button4.setForeground(new Color (0xf));
         button4.setBorder(border);
 
+        refresh = new JButton("\uD83D\uDD01");
+        refresh.setBorder(border);
+        refresh.setBounds(320,30,40,25);
+        refresh.setBackground(new Color (0xD2C6C6));
+        refresh.setForeground(new Color (0xf));
+        refresh.setFocusable(false);
+        frame1.add(refresh);
+
+
+
 
 
 
@@ -292,7 +329,7 @@ public class ReservationClientView {
         frame2.setSize(500,230);
         frame2.setLocationRelativeTo(null);
 
-        model2 = new DefaultTableModel(new Object[]{"Numéro de la chambre ", "Date debut", "Date fin", "Etat de la demande"}, 0);
+        model2 = new DefaultTableModel(new Object[]{"iD reservation","Numéro de la chambre ", "Date debut", "Date fin", "Etat de la demande"}, 0);
 
         reserv = new JTable(model2);
         scrollPane2 = new JScrollPane(reserv);
@@ -300,16 +337,21 @@ public class ReservationClientView {
         frame3.add(scrollPane2);
 
 
-        button10 = new JButton("Show/Refresh");
+        button10 = new JButton("\uD83D\uDD01");
         button10.setBorder(border);
-        button10.setBounds(300,240,80,25);
+        button10.setBounds(775,45,40,25);
         button10.setBackground(new Color (0xD2C6C6));
         button10.setForeground(new Color (0xf));
         button10.setFocusable(false);
 
 
+        textField11 = new JTextField();
+
+        textField11.setBounds(380,245,100,25);
 
 
+
+        frame3.add(textField11);
         frame3.add(button10);
         frame3.add(button2);
         frame3.add(button3);
@@ -319,21 +361,48 @@ public class ReservationClientView {
         frame3.setSize(900,400);
         frame3.setLocationRelativeTo(null);
 
-        JLabel label4 = new JLabel("Numéro de la chambre: ");
+        JLabel label4 = new JLabel("ID de la reservation: ");
         JLabel label5 = new JLabel("Date de début de la réservation: ");
         JLabel label6 = new JLabel("Date de fin de la réservation: ");
 
 
+//        textField4 = new JTextField();
+//        textField5= new JTextField();
+//        textField6 = new JTextField();
+//
+        label4.setBounds(20,18,250,50);
+//        textField4.setBounds(160,29,150,25);
+        label5.setBounds(20,56,250,50);
+//        textField5.setBounds(204,68,150,25);
+        label6.setBounds(20,94,250,50);
+//        textField6.setBounds(185,107,150,25);
+
         textField4 = new JTextField();
-        textField5= new JTextField();
+        textField5 = new JTextField();
         textField6 = new JTextField();
 
+        textField12 = new JTextField();
+        textField13= new JTextField();
+        textField14 = new JTextField();
+        textField15 = new JTextField();
+
         label4.setBounds(20,18,250,50);
-        textField4.setBounds(160,29,150,25);
+        textField4.setBounds(160,29,80,25);
         label5.setBounds(20,56,250,50);
-        textField5.setBounds(204,68,150,25);
+        textField5.setBounds(204,68,40,25);
         label6.setBounds(20,94,250,50);
-        textField6.setBounds(185,107,150,25);
+        textField6.setBounds(204,107,40,25);
+
+        textField12.setBounds(264,68,40,25);
+        textField13.setBounds(324,68,80,25);
+
+        textField14.setBounds(264,107,40,25);
+        textField15.setBounds(324,107,80,25);
+
+
+
+
+
 
         button8 = new JButton("Ok");
         button8.setBorder(border);
@@ -356,6 +425,12 @@ public class ReservationClientView {
         frame4.add(textField5);
         frame4.add(label6);
         frame4.add(textField6);
+
+        frame4.add(textField12);
+        frame4.add(textField13);
+        frame4.add(textField14);
+        frame4.add(textField15);
+
         frame4.add(button8);
         frame4.add(button9);
         frame4.setResizable(false);
@@ -375,6 +450,7 @@ public class ReservationClientView {
         button8.addActionListener(controller);
         button9.addActionListener(controller);
         button10.addActionListener(controller);
+        refresh.addActionListener(controller);
 
     }
 }

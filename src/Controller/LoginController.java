@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Admin;
+import Model.CurrentAdmin;
 import Model.CurrentClient;
 import Model.Hotel;
 import View.LoginView;
@@ -34,7 +35,7 @@ public class LoginController implements ActionListener {
             if(Hotel.getUtilisateurs().containsKey(username) && (Hotel.getUtilisateurs().get(username).getpassword().equals(password))) {
 
                 if (Hotel.getUtilisateurs().get(username) instanceof Admin) {
-                    CurrentClient.username = username;
+                    CurrentAdmin.username = username;
                     new PageAccueilAdminView();
                 } else {
                     CurrentClient.username = username;

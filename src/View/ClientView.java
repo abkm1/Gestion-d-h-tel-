@@ -62,14 +62,14 @@ public class ClientView {
         scrollPane.setBounds(40,50,400,195);
 
         button1 = new JButton("Menu Principal");
-        button1.setBounds(160,255,120,50);
+        button1.setBounds(175,255,120,50);
         button1.setBorder(border);
         button1.setBackground(new Color(0xD2C6C6));
         button1.setForeground(Color.black);
         button1.setFocusable(false);
 
-        button2 = new JButton("Show/Refresh");
-        button2.setBounds(160,300,120,50);
+        button2 = new JButton("\uD83D\uDD01");
+        button2.setBounds(395,22,45,25);
         button2.setBorder(border);
         button2.setBackground(new Color(0xD2C6C6));
         button2.setForeground(Color.black);

@@ -1,13 +1,18 @@
-import Model.IDsAndPasswords;
+import Model.*;
+import View.ChambreAdminView;
 import View.LoginView;
+import View.PageAccueilClientView;
+import View.ReservationClientView;
 
 public class Main {
     public static void main (String[] args)
     {
-       IDsAndPasswords idsandPasswords = new IDsAndPasswords();
-   LoginView login = new LoginView(idsandPasswords.getLoginInfo());
-  //  new PageAccueilClientView();
-    // new ReservationClientView();
+
+        Hotel.Start();
+
+        LoginView login = new LoginView();
+       // new ReservationClientView();
+
 
 
     }

@@ -13,6 +13,11 @@ public class ChambreAdminView {
     JButton button1 ;
     JButton button2 ;
     JButton button3 ;
+    JButton refresh ;
+
+    public JButton getRefresh() {
+        return refresh;
+    }
 
     JButton button4;
 
@@ -164,9 +169,13 @@ public class ChambreAdminView {
     }
 
 
-
     JTextField field2;
     JLabel label2;
+
+    public JTextField getField2() {
+        return field2;
+    }
+
 
     public JButton getButton5() {
         return button5;
@@ -218,6 +227,14 @@ public class ChambreAdminView {
         button4.setForeground(new Color (0xf));
         button4.setBorder(border);
 
+        refresh = new JButton("\uD83D\uDD01");
+        refresh.setBorder(border);
+        refresh.setBounds(320,30,40,25);
+        refresh.setBackground(new Color (0xD2C6C6));
+        refresh.setForeground(new Color (0xf));
+        refresh.setFocusable(false);
+        frame.add(refresh);
+
 
 
 
@@ -259,16 +276,6 @@ public class ChambreAdminView {
 
 
 
-        frame3 = new JFrame("Supprimer Chambre");
-        field2 = new JTextField();
-        field2.setBounds(180,38,100,25);
-        label2 = new JLabel("Numéro de la chambre :");
-        label2.setBounds(20,0,200,100);
-        label2.setFont(new Font (null,Font.BOLD,13));
-
-
-
-
         frame2.add(label);
         frame2.add(field);
         frame2.add(button5);
@@ -280,7 +287,12 @@ public class ChambreAdminView {
         frame2.setLayout(null);
 
 
-
+        frame3 = new JFrame("Supprimer Chambre");
+        field2 = new JTextField();
+        field2.setBounds(180,38,100,25);
+        label2 = new JLabel("Numéro de la chambre :");
+        label2.setBounds(20,0,200,100);
+        label2.setFont(new Font (null,Font.BOLD,13));
 
         button7 = new JButton("OK");
         button7.setFocusable(false);
@@ -299,6 +311,7 @@ public class ChambreAdminView {
 
         button7.addActionListener(controller);
         button8.addActionListener(controller);
+        refresh.addActionListener(controller);
 
         frame3.add(label2);
         frame3.add(field2);
@@ -325,6 +338,7 @@ public class ChambreAdminView {
 
 
     }
+
 
 
 }
