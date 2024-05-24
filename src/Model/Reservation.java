@@ -5,12 +5,14 @@ public class Reservation {
     private Client client ;
     private String etat;
     static private int ID = 0;
+    private int id;
     private  LaDate date_debut;
     private LaDate date_fin;
 
 
     public Reservation(Chambre chambre, Client client, LaDate debut, LaDate fin ) {
-        ID ++ ;
+        ID++;
+        this.id = ID ;
         this.chambre = chambre;
         this.client = client;
         this.etat = "hold";
@@ -42,13 +44,10 @@ public class Reservation {
         this.etat = etat;
     }
 
-    public int getID() {
-        return ID;
+    public int getid() {
+        return this.id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
 
     public LaDate getDate_debut() {
         return date_debut;

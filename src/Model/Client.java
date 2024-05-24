@@ -64,7 +64,7 @@ public class Client extends Utilisateur{
         }
 
         reservation.getChambre().setReserved(false);
-        Hotel.supprimerReservation(reservation.getID());
+        Hotel.supprimerReservation(reservation.getid());
 
     }
 

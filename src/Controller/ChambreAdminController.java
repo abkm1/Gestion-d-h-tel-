@@ -29,6 +29,7 @@ public class ChambreAdminController implements ActionListener {
         }
         if (e.getSource() == view.getButton2()) {
 
+
         }
         if (e.getSource() == view.getButton3()) {
             view.getFrame3().setVisible(true);

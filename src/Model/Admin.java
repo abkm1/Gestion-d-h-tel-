@@ -44,21 +44,24 @@ public class Admin extends Utilisateur{
                 '}';
     }
 
-    public void acceptReservation(Reservation reservation){
-        if (reservation.getChambre().isReserved()){
-            System.out.println("this room is already reserved");
-            return;
-        }
-        if(LaDate.aujourdhui().estApres(reservation.getDate_fin()) ){
-            System.out.println("you can't accept this reservation");
-            return;
+    public boolean acceptReservation(Reservation reservation){
+        if (reservation.getChambre().isReserved() || reservation.getEtat().equals("declined") ){    //BALAK nzidou ki
+
+            return false;
         }
 
+
         reservation.setEtat("accepted");
+        reservation.getChambre().setReserved(true);
+        return true;
 
     }
 
     public void refuseReservation(Reservation reservation){
+        if (reservation.getEtat().equals("accepted")){
+            return;
+        }
+
         reservation.setEtat("declined");
 
     }

@@ -4,6 +4,7 @@ import Controller.ReservationAdminController;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 
@@ -30,14 +31,36 @@ public class ReservationAdminView {
         return button3;
     }
 
+    public JButton getButton4() {
+        return button4;
+    }
+
     JButton button2;
 
     JButton button3 ;
+
+    JButton button4;
+
+    JTextField textField;
+
+    public JTextField getTextField(){
+        return textField;
+    }
+
+    public JTable getTable() {
+        return table;
+    }
 
     JTable table ;
     JScrollPane scrollPane ;
 
     ImageIcon icon ;
+
+    DefaultTableModel model ;
+
+    public DefaultTableModel getModel() {
+        return model;
+    }
 
     public ReservationAdminView()
     {
@@ -46,21 +69,16 @@ public class ReservationAdminView {
         frame.setIconImage(icon.getImage());
 
 
-        String[] cols = {"ID Réservation","Numéro  de la chambre réservée","ID client","Nom","Prénom","Etat de la demande"};
+        model = new DefaultTableModel(new Object[]{"ID Réservation","Num chambre","Client","Nom","Prénom","Etat de la demande"},0);
 
-        String [][] data = {{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"}
-        ,{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"}
-        ,{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"}
-        ,{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"},{"1","1","1","Dendani","Safwane","-"}
-        };
-
-
-
-        table = new JTable(data,cols);
+        table = new JTable(model);
 
 
         TableColumn column1 = table.getColumnModel().getColumn(1);
         column1.setPreferredWidth(140);
+
+
+
 
 
 
@@ -71,6 +89,11 @@ public class ReservationAdminView {
 
 
         border = BorderFactory.createLineBorder(new Color (0x857979),2);
+
+        textField = new JTextField();
+        textField.setBounds(240,290,120,50);
+
+
 
         button1 = new JButton("Accepter");
         button1.setBounds(370,290,120,50);
@@ -96,16 +119,27 @@ public class ReservationAdminView {
         button3.setForeground(Color.black);
         button3.setFocusable(false);
 
+        button4 = new JButton("Refresh");
+        button4.setBounds(300,345,120,50);
+        button4.setBorder(border);
+        button4.setBackground(new Color(0xD2C6C6));
+        button4.setForeground(Color.black);
+        button4.setFocusable(false);
+
         ReservationAdminController controller = new ReservationAdminController(this);
         button1.addActionListener(controller);
         button2.addActionListener(controller);
         button3.addActionListener(controller);
+        button4.addActionListener(controller);
+
 
 
         frame.add(scrollPane);
+        frame.add(textField);
         frame.add(button1);
         frame.add(button2);
         frame.add(button3);
+        frame.add(button4);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

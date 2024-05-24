@@ -19,7 +19,7 @@ public class Hotel {
 
     // Méthodes de gestion des réservations
     public static void ajouterReservation(Reservation reservation) {
-        reservations.put(reservation.getID(), reservation);
+        reservations.put(reservation.getid(), reservation);
     }
 
     public static void supprimerReservation(int idReservation) {
@@ -48,7 +48,21 @@ public class Hotel {
         for ( z = 1 ; z<11 ; z++){
             Hotel.ajouterChambre(z);
         }
-        Admin nail = new Admin("a","a","a","a");
+
+        Client zombozo = new Client("a","a","a","a");
+        Hotel.ajouterUtilisateur(zombozo);
+
+        Admin zomozo = new Admin("b","b","b","b");
+        Hotel.ajouterUtilisateur(zomozo);
+//        Reservation reservation = new Reservation(Hotel.getChambres().get(7),new Client(),new LaDate(7,7,2024),new LaDate(7,8,2024) );
+//        Hotel.ajouterReservation(reservation);
+//
+//        Reservation reservation2 = new Reservation(Hotel.getChambres().get(8),new Client(),new LaDate(7,8,2024),new LaDate(7,10,2024) );
+//        Hotel.ajouterReservation(reservation2);
+//
+//        Reservation reservation3 = new Reservation(Hotel.getChambres().get(8),new Client(),new LaDate(7,9,2024),new LaDate(7,11,2024) );
+//        Hotel.ajouterReservation(reservation3);
+
 
     }
 }
